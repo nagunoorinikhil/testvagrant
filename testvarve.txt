@@ -1,0 +1,65 @@
+
+Name:NAGUNOORI NIKHIL 
+College: Jyothishmathi Institute of Technology and Science 
+Year Of Passing:2021
+Phone:6304290984 
+email:nikhilnagunoori@gmail.com
+
+
+class planet:
+    def __init__(self,name, gases, moons,  rings):
+        self.name=name
+        self.gases=gases 
+        self.moons=moons 
+        self.rings=rings 
+ 
+    def com(self,items):
+        sum=0
+        for i in items:
+            if i.rings=="Yes":
+                sum+=i.moons
+       
+        return sum
+        
+        
+    def gas(self,p):
+        alg=[]
+        for i in p:
+            alg+=i.gases 
+    
+        ug=list(set(alg))
+        count=[]
+        for j in ug:
+            count.append(alg.count(j))
+       
+        m=max(count)
+        
+        maximum_gases=[]
+        index=0
+        for i in count:
+            if i==m:
+                maximum_gases.append(ug[index])
+            index+=1    
+             
+        return maximum_gases      
+                
+                
+        
+            
+            
+        
+ 
+p1=planet("Mercury",[],0,"No") 
+p2=planet("Venus",["Carbon Dioxide", "Nitrogen"],1,"No")
+p3=planet("Earth",[ "Nitrogen", "Oxygen"], 1, "No")
+p4=planet("Jupitor",[ "Hydrogen", "Helium"], 79, "Yes")
+p5=planet("Saturn",["Hydrogen", "Helium"], 83,"Yes")
+p6=planet("Uranus" ,["Hydrogen", "Helium", "Methane"], 27,"Yes")
+
+maxmoons=p1.com([p1,p2,p3,p4,p5,p6])
+print(maxmoons)
+mgas=p1.gas([p1,p2,p3,p4,p5,p6])
+print(mgas)
+
+
+
